@@ -1,0 +1,12 @@
+{
+  "name": "jar-analysis",
+  "version": "1.0.0",
+  "description": "Analyze Jar file for suspicious code",
+  "main": "index.js",
+  "author": "Naimad (discord: 4g0)",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^4.68.4"
+  }
+}
