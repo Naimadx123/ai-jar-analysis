@@ -58,15 +58,35 @@ This project aims to streamline the analysis of Java JAR files by decompiling th
 ```json
 [
   {
-    "filename": "decompiled_code/com/example/MyClass.java",  // Path to the decompiled Java file analyzed
-    "positive": true,                                        // Indicates if suspicious patterns were found in this file
-    "should_be_checked": true,                               // Suggests if the code requires manual review by a human
-    "suspicious_code_blocks": [                              // Array of specific suspicious code snippets detected
-      "System.loadLibrary('native_lib')",                    // Example of a risky native library load
-      "Runtime.getRuntime().exec('curl malicious-site.com')" // Example of a potentially dangerous command execution
+    "filename": "decompiled_code/com/example/MyClass.java",
+    "positive": true,
+    "should_be_checked": true,
+    "suspicious_code_blocks": [
+      "System.loadLibrary('native_lib')",
+      "Runtime.getRuntime().exec('curl malicious-site.com')"
     ]
   }
 ]
+```
+Field Descriptions:
+```yml
+
+filename:
+  Type: String
+  Description: The path to the decompiled Java file that was analyzed for suspicious code patterns.
+
+positive:
+  Type: Boolean
+  Description: Indicates whether any suspicious patterns were found in the analyzed file. A value of true suggests potential security risks.
+
+should_be_checked:
+  Type: Boolean
+  Description: This flag indicates whether the identified issues in the code require further manual review by a developer or security analyst.
+
+suspicious_code_blocks:
+  Type: Array of Strings
+  Description: A collection of specific code snippets identified as suspicious or potentially malicious. Each entry in the array highlights a particular line or expression that may warrant further scrutiny.
+
 ```
 
 ## Configuration
